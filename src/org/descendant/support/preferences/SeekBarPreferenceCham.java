@@ -1,4 +1,4 @@
-package com.aquarios.support.preferences;
+package org.descendant.support.preferences;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -24,7 +24,7 @@ import android.widget.Toast;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 
-import com.aquarios.support.R;
+import org.descendant.support.R;
 
 public class SeekBarPreferenceCham extends Preference implements SeekBar.OnSeekBarChangeListener {
 

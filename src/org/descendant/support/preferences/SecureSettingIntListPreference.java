@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package com.aquarios.support.preferences;
+package org.descendant.support.preferences;
 
 import android.content.Context;
 import android.util.AttributeSet;
 
-public class SystemSettingIntListPreference extends SystemSettingListPreference {
+public class SecureSettingIntListPreference extends SecureSettingListPreference {
 
-    public SystemSettingIntListPreference(Context context, AttributeSet attrs, int defStyle) {
+    public SecureSettingIntListPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public SystemSettingIntListPreference(Context context, AttributeSet attrs) {
+    public SecureSettingIntListPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public SystemSettingIntListPreference(Context context) {
+    public SecureSettingIntListPreference(Context context) {
         super(context);
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2018 AICP
+ * Copyright (C) 2017 AICP
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,25 +14,30 @@
  * limitations under the License.
  */
 
-package com.aquarios.support.preferences;
+package org.descendant.support.preferences;
 
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-public class ListPreference extends androidx.preference.ListPreference {
+import androidx.preference.SwitchPreference;
+
+public class SecureSettingListPreference extends ListPreference {
     private boolean mAutoSummary = false;
 
-    public ListPreference(Context context, AttributeSet attrs, int defStyle) {
+    public SecureSettingListPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
     }
 
-    public ListPreference(Context context, AttributeSet attrs) {
+    public SecureSettingListPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
     }
 
-    public ListPreference(Context context) {
+    public SecureSettingListPreference(Context context) {
         super(context);
+        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
     }
 
     @Override
@@ -52,4 +57,14 @@ public class ListPreference extends androidx.preference.ListPreference {
         mAutoSummary = autoSummary;
         super.setSummary(summary);
     }
+
+    @Override
+    protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
+        // This is what default ListPreference implementation is doing without respecting
+        // real default value:
+        //setValue(restoreValue ? getPersistedString(mValue) : (String) defaultValue);
+        // Instead, we better do
+        setValue(restoreValue ? getPersistedString((String) defaultValue) : (String) defaultValue);
+    }
+
 }

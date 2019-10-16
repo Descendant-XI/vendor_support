@@ -1,4 +1,4 @@
-package com.aquarios.support.preferences;
+package org.descendant.support.preferences;
 
 import android.content.Context;
 import android.util.AttributeSet;

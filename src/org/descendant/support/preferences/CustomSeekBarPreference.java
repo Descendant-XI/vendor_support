@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.aquarios.support.preferences;
+package org.descendant.support.preferences;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -36,7 +36,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 import androidx.preference.SwitchPreference;
 
-import com.aquarios.support.R;
+import org.descendant.support.R;
 
 public class CustomSeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener {
     private final String TAG = getClass().getName();

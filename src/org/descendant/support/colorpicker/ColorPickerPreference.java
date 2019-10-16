@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.aquarios.support.colorpicker;
+package org.descendant.support.colorpicker;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -41,7 +41,7 @@ import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.PreferenceViewHolder;
 import androidx.preference.SwitchPreference;
 
-import com.aquarios.support.R;
+import org.descendant.support.R;
 
 /**
  * A preference type that allows a user to choose a time

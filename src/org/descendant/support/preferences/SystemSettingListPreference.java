@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 AICP
+ * Copyright (C) 2017-2018 AICP
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,48 +14,27 @@
  * limitations under the License.
  */
 
-package com.aquarios.support.preferences;
+package org.descendant.support.preferences;
 
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-import androidx.preference.SwitchPreference;
+public class SystemSettingListPreference extends ListPreference {
 
-public class SecureSettingListPreference extends ListPreference {
-    private boolean mAutoSummary = false;
-
-    public SecureSettingListPreference(Context context, AttributeSet attrs, int defStyle) {
+    public SystemSettingListPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
+        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
-    public SecureSettingListPreference(Context context, AttributeSet attrs) {
+    public SystemSettingListPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
+        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
-    public SecureSettingListPreference(Context context) {
+    public SystemSettingListPreference(Context context) {
         super(context);
-        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
-    }
-
-    @Override
-    public void setValue(String value) {
-        super.setValue(value);
-        if (mAutoSummary || TextUtils.isEmpty(getSummary())) {
-            setSummary(getEntry(), true);
-        }
-    }
-
-    @Override
-    public void setSummary(CharSequence summary) {
-        setSummary(summary, false);
-    }
-
-    private void setSummary(CharSequence summary, boolean autoSummary) {
-        mAutoSummary = autoSummary;
-        super.setSummary(summary);
+        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
     @Override

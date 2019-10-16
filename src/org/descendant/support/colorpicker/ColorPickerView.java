@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.aquarios.support.colorpicker;
+package org.descendant.support.colorpicker;
 
 import android.content.Context;
 import android.graphics.Canvas;
