@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package org.org.descendant.support.preferences;
+package org.descendant.support.preferences;
 
 import android.app.ListActivity;
 import android.content.Context;
